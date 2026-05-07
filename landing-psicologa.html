@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dra. Ana Beatriz Ferreira — Psicóloga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --sage: #7B9E87;
+      --sage-l: #C2D9C9;
+      --sage-d: #4F7360;
+      --terra: #C4856A;
+      --terra-l: #E8C4B4;
+      --cream: #FAF7F2;
+      --cream-d: #EFE9DF;
+      --cream-dd: #E0D8CC;
+      --dark: #2C2820;
+      --text: #4A4640;
+      --muted: #8A847E;
+      --white: #FFFFFF;
+      --r: 12px;
+      --rl: 20px;
+      --rxl: 32px;
+      --shadow: 0 4px 24px rgba(44, 40, 32, .08);
+      --shadow-lg: 0 8px 48px rgba(44, 40, 32, .12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    section {
+      padding: 96px 0;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── NAV ─────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(250, 247, 242, .92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--cream-d);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--dark);
+      font-weight: 500;
+      letter-spacing: .02em;
+    }
+
+    .logo span {
+      color: var(--sage-d);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: .03em;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--sage-d);
+    }
+
+    .nav-cta {
+      background: var(--sage-d);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all .2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--dark);
+      transform: translateY(-1px);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--dark);
+      border-radius: 2px;
+      transition: .3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      top: 72px;
+      background: var(--cream);
+      z-index: 99;
+      padding: 32px;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .mobile-menu a {
+      font-size: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--dark);
+    }
+
+    .mobile-menu .nav-cta {
+      text-align: center;
+      width: 100%;
+    }
+
+    /* ── HERO ─────────────────────────────────────────── */
+    .hero {
+      padding-top: 160px;
+      padding-bottom: 80px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      right: -120px;
+      top: -80px;
+      width: 560px;
+      height: 560px;
+      border-radius: 50%;
+      background: var(--cream-d);
+      opacity: .6;
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      left: -80px;
+      bottom: -40px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: var(--sage-l);
+      opacity: .25;
+      z-index: 0;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--sage-l);
+      color: var(--sage-d);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--sage-d);
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 500;
+      margin-bottom: 24px;
+      letter-spacing: -.01em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--sage-d);
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 460px;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--sage-d);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 500;
+      transition: all .25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover {
+      background: var(--dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(79, 115, 96, .3);
+    }
+
+    .btn-outline {
+      border: 1.5px solid var(--sage-d);
+      color: var(--sage-d);
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 500;
+      transition: all .25s;
+    }
+
+    .btn-outline:hover {
+      background: var(--sage-l);
+      transform: translateY(-2px);
+    }
+
+    .hero-img-wrap {
+      position: relative;
+    }
+
+    .hero-photo {
+      width: 100%;
+      aspect-ratio: .8/1;
+      border-radius: 40% 60% 55% 45%/45% 45% 55% 55%;
+      object-fit: cover;
+      background: linear-gradient(135deg, var(--sage-l) 0%, var(--cream-dd) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-photo-placeholder {
+      width: 100%;
+      aspect-ratio: .82/1;
+      border-radius: 40% 60% 55% 45%/45% 45% 55% 55%;
+      background: linear-gradient(145deg, #C2D9C9 0%, #A8C5B0 40%, #E0D8CC 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-photo-placeholder svg {
+      position: absolute;
+      bottom: 0;
+    }
+
+    .hero-stats {
+      position: absolute;
+      bottom: -16px;
+      left: -24px;
+      background: var(--white);
+      border-radius: var(--r);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-stats strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      color: var(--dark);
+    }
+
+    .hero-stats span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-crp {
+      position: absolute;
+      top: 24px;
+      right: -16px;
+      background: var(--terra);
+      color: #fff;
+      border-radius: var(--r);
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .04em;
+    }
+
+    /* ── SOBRE ─────────────────────────────────────────── */
+    .sobre {
+      background: var(--white);
+    }
+
+    .sobre-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .sobre-img {
+      border-radius: var(--rxl);
+      background: linear-gradient(145deg, var(--cream-d) 0%, var(--sage-l) 100%);
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sobre-img-inner {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(160deg, #D6E8DC 0%, #B8D0BF 50%, #C4856A22 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      border-radius: var(--rxl);
+    }
+
+    .sobre-img-inner svg {
+      margin-bottom: -4px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--cream-d);
+      color: var(--sage-d);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .sobre h2 {
+      font-size: clamp(32px, 3.5vw, 48px);
+      margin-bottom: 20px;
+    }
+
+    .sobre p {
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-size: 15.5px;
+    }
+
+    .sobre-creds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .cred {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cream);
+      padding: 10px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+    }
+
+    .cred i {
+      color: var(--sage-d);
+    }
+
+    /* ── ESPECIALIDADES ─────────────────────────────────────────── */
+    .espec {
+      background: var(--cream);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 60px;
+    }
+
+    .section-header .tag {
+      margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(32px, 3.5vw, 48px);
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--rl);
+      padding: 32px;
+      transition: all .3s;
+      border: 1.5px solid transparent;
+    }
+
+    .card:hover {
+      border-color: var(--sage-l);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--cream-d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ── COMO FUNCIONA ─────────────────────────────────────────── */
+    .como {
+      background: var(--sage-d);
+      padding: 80px 0;
+    }
+
+    .como .section-header .tag {
+      background: rgba(255, 255, 255, .15);
+      color: #fff;
+    }
+
+    .como .section-header h2 {
+      color: #fff;
+    }
+
+    .como .section-header p {
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      position: relative;
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: calc(16.67% + 20px);
+      right: calc(16.67% + 20px);
+      height: 1px;
+      background: rgba(255, 255, 255, .2);
+    }
+
+    .step {
+      text-align: center;
+    }
+
+    .step-num {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .12);
+      border: 1.5px solid rgba(255, 255, 255, .3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .step h3 {
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, .65);
+      line-height: 1.75;
+    }
+
+    /* ── DEPOIMENTOS ─────────────────────────────────────────── */
+    .depo {
+      background: var(--white);
+    }
+
+    .depo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .depo-card {
+      background: var(--cream);
+      border-radius: var(--rl);
+      padding: 32px;
+      position: relative;
+    }
+
+    .depo-card::before {
+      content: '\201C';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      color: var(--sage-l);
+      position: absolute;
+      top: 16px;
+      left: 24px;
+      line-height: 1;
+    }
+
+    .stars {
+      color: var(--terra);
+      margin-bottom: 20px;
+      font-size: 14px;
+      padding-top: 40px;
+    }
+
+    .depo-card p {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .depo-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--sage-l);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      color: var(--sage-d);
+      font-size: 14px;
+    }
+
+    .depo-author strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .depo-author span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ── AGENDAMENTO ─────────────────────────────────────────── */
+    .agenda {
+      background: var(--cream);
+    }
+
+    .agenda-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .agenda-info h2 {
+      font-size: clamp(30px, 3vw, 44px);
+      margin-bottom: 16px;
+    }
+
+    .agenda-info p {
+      color: var(--muted);
+      font-size: 15.5px;
+      margin-bottom: 32px;
+    }
+
+    .agenda-features {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .agenda-feat {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 15px;
+    }
+
+    .agenda-feat i {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--sage-l);
+      color: var(--sage-d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .calendar-widget {
+      background: var(--white);
+      border-radius: var(--rl);
+      padding: 28px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .cal-header h3 {
+      font-size: 20px;
+    }
+
+    .cal-nav {
+      background: var(--cream);
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      font-size: 14px;
+      transition: .2s;
+    }
+
+    .cal-nav:hover {
+      background: var(--sage-l);
+      color: var(--sage-d);
+    }
+
+    .cal-weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .cal-weekday {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      padding: 4px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .cal-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+    }
+
+    .cal-day {
+      text-align: center;
+      padding: 8px 4px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all .2s;
+      border: 1.5px solid transparent;
+    }
+
+    .cal-day:empty {
+      cursor: default;
+    }
+
+    .cal-day.other-month {
+      color: var(--cream-dd);
+    }
+
+    .cal-day.today {
+      background: var(--cream-d);
+      font-weight: 500;
+    }
+
+    .cal-day.available:hover,
+    .cal-day.available:focus {
+      background: var(--sage-l);
+      color: var(--sage-d);
+      border-color: var(--sage);
+    }
+
+    .cal-day.selected {
+      background: var(--sage-d);
+      color: #fff;
+      border-color: var(--sage-d);
+    }
+
+    .cal-day.past {
+      color: var(--cream-dd);
+      cursor: default;
+    }
+
+    .time-slots {
+      margin-top: 20px;
+    }
+
+    .time-slots h4 {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .slots-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .slot {
+      background: var(--cream);
+      border: 1.5px solid var(--cream-dd);
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .slot:hover {
+      border-color: var(--sage);
+      color: var(--sage-d);
+    }
+
+    .slot.selected {
+      background: var(--sage-d);
+      color: #fff;
+      border-color: var(--sage-d);
+    }
+
+    .slot.booked {
+      background: var(--cream);
+      color: var(--cream-dd);
+      cursor: not-allowed;
+      text-decoration: line-through;
+    }
+
+    .confirm-btn {
+      width: 100%;
+      margin-top: 16px;
+      background: var(--sage-d);
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .25s;
+      display: none;
+    }
+
+    .confirm-btn:hover {
+      background: var(--dark);
+    }
+
+    .confirm-btn.visible {
+      display: block;
+    }
+
+    .booking-success {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      background: var(--sage-l);
+      border-radius: var(--r);
+      margin-top: 16px;
+    }
+
+    .booking-success i {
+      font-size: 32px;
+      color: var(--sage-d);
+      margin-bottom: 8px;
+    }
+
+    .booking-success p {
+      color: var(--sage-d);
+      font-weight: 500;
+    }
+
+    /* ── CONTATO ─────────────────────────────────────────── */
+    .contato {
+      background: var(--white);
+    }
+
+    .contato-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+    }
+
+    .contato-info h2 {
+      font-size: clamp(30px, 3vw, 44px);
+      margin-bottom: 16px;
+    }
+
+    .contato-info>p {
+      color: var(--muted);
+      margin-bottom: 32px;
+      font-size: 15.5px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .info-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sage-d);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .info-item strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .info-item span {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #25D366;
+      color: #fff;
+      padding: 16px 28px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 500;
+      margin-top: 28px;
+      transition: all .25s;
+      width: fit-content;
+    }
+
+    .whatsapp-btn:hover {
+      background: #1DAA56;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, .3);
+    }
+
+    .whatsapp-btn i {
+      font-size: 22px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: var(--cream);
+      border: 1.5px solid var(--cream-dd);
+      border-radius: var(--r);
+      padding: 12px 16px;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      transition: border-color .2s;
+      width: 100%;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--sage);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .submit-btn {
+      background: var(--sage-d);
+      color: #fff;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .25s;
+    }
+
+    .submit-btn:hover {
+      background: var(--dark);
+    }
+
+    .map-placeholder {
+      background: linear-gradient(145deg, var(--cream-d) 0%, var(--sage-l) 100%);
+      border-radius: var(--rl);
+      height: 200px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--sage-d);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .map-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237B9E87' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .map-pin {
+      width: 48px;
+      height: 48px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      font-size: 22px;
+      color: var(--terra);
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      padding: 48px 0 32px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .footer-logo span {
+      color: var(--sage-l);
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .35);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, .6);
+      font-size: 16px;
+      transition: all .25s;
+    }
+
+    .social-link:hover {
+      background: var(--sage-d);
+      border-color: var(--sage-d);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-nav a {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .4);
+      transition: color .2s;
+    }
+
+    .footer-nav a:hover {
+      color: rgba(255, 255, 255, .8);
+    }
+
+    /* ── FLOATING WHATSAPP ─────────────────────────────────────────── */
+    .float-wa {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 200;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, .45);
+      transition: all .3s;
+      cursor: pointer;
+    }
+
+    .float-wa:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 32px rgba(37, 211, 102, .55);
+    }
+
+    .float-wa-pulse {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: #25D366;
+      animation: pulse 2.5s ease-out infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: .6;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(1.7);
+      }
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────── */
+    @media(max-width:900px) {
+
+      .hero-inner,
+      .sobre-inner,
+      .agenda-inner,
+      .contato-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-photo-placeholder {
+        max-height: 320px;
+        border-radius: var(--rxl);
+      }
+
+      .hero::before,
+      .hero::after {
+        display: none;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .steps::before {
+        display: none;
+      }
+
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-nav {
+        justify-content: center;
+      }
+
+      .sobre-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .sobre-img {
+        max-height: 260px;
+      }
+    }
+
+    @media(max-width:600px) {
+      section {
+        padding: 64px 0;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+
+      .slots-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats,
+      .hero-crp {
+        display: none;
+      }
+
+      .depo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a class="logo" href="#"><span>Ana Beatriz</span> Ferreira</a>
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#especialidades">Especialidades</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#agendamento">Agendamento</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a class="nav-cta" href="#agendamento">Agendar Consulta</a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#sobre" onclick="closeMenu()">Sobre</a>
+    <a href="#especialidades" onclick="closeMenu()">Especialidades</a>
+    <a href="#depoimentos" onclick="closeMenu()">Depoimentos</a>
+    <a href="#agendamento" onclick="closeMenu()">Agendamento</a>
+    <a href="#contato" onclick="closeMenu()">Contato</a>
+    <a class="nav-cta btn-primary" href="#agendamento" onclick="closeMenu()">Agendar Consulta</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-badge">Psicóloga Clínica · CRP 06/123456</div>
+          <h1>Cuidando da sua saúde<br><em>mental com afeto</em></h1>
+          <p>Um espaço seguro e acolhedor para você se reconectar consigo mesmo. Atendimento presencial em Belo
+            Horizonte e online para todo o Brasil.</p>
+          <div class="hero-btns">
+            <a class="btn-primary" href="#agendamento"><i class="fa-regular fa-calendar"></i> Agendar consulta</a>
+            <a class="btn-outline" href="#sobre">Conhecer mais</a>
+          </div>
+        </div>
+        <div class="hero-img-wrap">
+          <div class="hero-photo-placeholder">
+            <svg width="280" height="320" viewBox="0 0 280 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="140" cy="120" rx="64" ry="72" fill="#7B9E87" opacity=".6" />
+              <ellipse cx="140" cy="116" rx="48" ry="54" fill="#FAF7F2" opacity=".5" />
+              <path d="M60 320c0-60 36-108 80-108s80 48 80 108H60z" fill="#7B9E87" opacity=".5" />
+              <path d="M80 320c0-50 27-90 60-90s60 40 60 90H80z" fill="#4F7360" opacity=".4" />
+            </svg>
+          </div>
+          <div class="hero-stats">
+            <strong>500+</strong>
+            <span>pacientes atendidos</span>
+          </div>
+          <div class="hero-crp">CRP 06/123456</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre" id="sobre">
+    <div class="container">
+      <div class="sobre-inner">
+        <div class="sobre-img">
+          <div class="sobre-img-inner">
+            <svg width="240" height="300" viewBox="0 0 240 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="120" cy="100" rx="56" ry="64" fill="#7B9E87" opacity=".5" />
+              <ellipse cx="120" cy="96" rx="42" ry="48" fill="#FAF7F2" opacity=".55" />
+              <path d="M40 300c0-55 36-100 80-100s80 45 80 100H40z" fill="#4F7360" opacity=".45" />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <span class="tag">Sobre mim</span>
+          <h2>Olá, sou a Dra. Ana Beatriz Ferreira</h2>
+          <p>Sou psicóloga clínica formada pela PUC Minas com mais de 8 anos de experiência no atendimento de adultos e
+            adolescentes. Acredito que cada pessoa carrega em si a capacidade de transformação — meu papel é caminhar ao
+            lado de você nesse processo.</p>
+          <p>Trabalho com abordagem Cognitivo-Comportamental (TCC) e Terapia de Aceitação e Compromisso (ACT),
+            integrando técnicas de mindfulness e autocompaixão para um cuidado completo e humano.</p>
+          <div class="sobre-creds">
+            <div class="cred"><i class="fa-solid fa-graduation-cap"></i> PUC Minas — Psicologia</div>
+            <div class="cred"><i class="fa-solid fa-certificate"></i> Especialização em TCC</div>
+            <div class="cred"><i class="fa-solid fa-heart"></i> Pós-grad. em Saúde Mental</div>
+            <div class="cred"><i class="fa-solid fa-shield-halved"></i> CRP 06/123456</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESPECIALIDADES -->
+  <section class="espec" id="especialidades">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Especialidades</span>
+        <h2>Como posso te ajudar</h2>
+        <p>Atendimento especializado para diferentes necessidades, sempre com escuta ativa e acolhimento genuíno.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <h3>Ansiedade e Estresse</h3>
+          <p>Técnicas baseadas em evidências para identificar gatilhos, desenvolver resiliência e recuperar a calma no
+            dia a dia.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌱</div>
+          <h3>Depressão</h3>
+          <p>Apoio especializado para atravessar momentos difíceis, recuperar a vitalidade e encontrar novos sentidos na
+            vida.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💞</div>
+          <h3>Relacionamentos</h3>
+          <p>Trabalho com padrões relacionais, vínculos afetivos, comunicação não-violenta e saúde nas relações
+            interpessoais.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🪞</div>
+          <h3>Autoconhecimento</h3>
+          <p>Jornada de autocompreensão para entender seus valores, crenças e construir uma vida mais alinhada com quem
+            você é.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="como">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Como funciona</span>
+        <h2>Simples assim</h2>
+        <p style="color:rgba(255,255,255,.65)">Três passos para começar sua jornada de cuidado.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Agende sua sessão</h3>
+          <p>Escolha o horário que melhor se encaixa na sua rotina — presencial ou online, a escolha é sua.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Primeira sessão</h3>
+          <p>Uma conversa acolhedora para nos conhecermos, entender suas necessidades e definir o melhor caminho juntos.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Sua jornada começa</h3>
+          <p>Sessões regulares, no seu ritmo, com acompanhamento dedicado e ferramentas práticas para sua transformação.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="depo" id="depoimentos">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Depoimentos</span>
+        <h2>O que dizem os pacientes</h2>
+        <p>Histórias reais de transformação e cuidado compartilhadas por quem já fez essa jornada.</p>
+      </div>
+      <div class="depo-grid">
+        <div class="depo-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>A Dra. Ana Beatriz transformou minha relação comigo mesma. Aprendi a lidar com a ansiedade de um jeito que
+            nunca imaginei ser possível. Me sinto outra pessoa depois de 8 meses de terapia.</p>
+          <div class="depo-author">
+            <div class="avatar">MC</div>
+            <div><strong>Mariana Costa</strong><span>Paciente há 1 ano</span></div>
+          </div>
+        </div>
+        <div class="depo-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>Encontrei na terapia um espaço sem julgamentos para falar sobre tudo. A Dr. Ana tem uma escuta incrível e
+            sempre me ajuda a encontrar clareza quando tudo parece confuso.</p>
+          <div class="depo-author">
+            <div class="avatar">RP</div>
+            <div><strong>Rafael Pinto</strong><span>Paciente há 6 meses</span></div>
+          </div>
+        </div>
+        <div class="depo-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>Comecei a terapia online e foi a melhor decisão que tomei. Muito prática, acolhedora e eficiente. O
+            processo de agendamento é super fácil e os horários são flexíveis para quem trabalha.</p>
+          <div class="depo-author">
+            <div class="avatar">JS</div>
+            <div><strong>Juliana Souza</strong><span>Paciente há 9 meses</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDAMENTO -->
+  <section class="agenda" id="agendamento">
+    <div class="container">
+      <div class="agenda-inner">
+        <div class="agenda-info">
+          <span class="tag">Agendamento</span>
+          <h2>Agende sua consulta online</h2>
+          <p>Escolha o melhor horário para você. Você receberá uma confirmação por e-mail e WhatsApp em instantes.</p>
+          <div class="agenda-features">
+            <div class="agenda-feat"><i class="fa-regular fa-clock"></i> Sessões de 50 minutos</div>
+            <div class="agenda-feat"><i class="fa-solid fa-video"></i> Presencial ou online</div>
+            <div class="agenda-feat"><i class="fa-brands fa-whatsapp"></i> Confirmação via WhatsApp</div>
+            <div class="agenda-feat"><i class="fa-regular fa-calendar-check"></i> Reagendamento gratuito com 24h</div>
+          </div>
+          <br>
+          <a class="btn-primary"
+            href="https://wa.me/5531975469010?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta!" target="_blank"
+            style="width:fit-content">
+            <i class="fa-brands fa-whatsapp"></i> Agendar pelo WhatsApp
+          </a>
+        </div>
+        <div class="calendar-widget" style="padding:0;overflow:hidden;min-height:600px">
+          <div style="width:100%;height:600px;overflow:scroll" id="my-cal-inline-50-min-session"></div>
+          <script type="text/javascript">
+            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "50-min-session", { origin: "https://app.cal.com" });
+            Cal.ns["50-min-session"]("inline", {
+              elementOrSelector: "#my-cal-inline-50-min-session",
+              config: { "layout": "month_view", "useSlotsViewOnSmallScreen": "true" },
+              calLink: "gabriel-testador-twfogu/50-min-session",
+            });
+            Cal.ns["50-min-session"]("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
+          </script>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contato" id="contato">
+    <div class="container">
+      <div class="contato-inner">
+        <div class="contato-info">
+          <span class="tag">Contato</span>
+          <h2>Vamos conversar?</h2>
+          <p>Estou aqui para tirar suas dúvidas e dar os primeiros passos juntos.</p>
+          <div class="map-placeholder">
+            <div class="map-pin"><i class="fa-solid fa-location-dot"></i></div>
+            <span style="font-size:13px;color:var(--sage-d);font-weight:500">Savassi, Belo Horizonte — MG</span>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div><strong>Endereço</strong><span>Rua Fernandes Tourinho, 234 · Sala 12<br>Savassi, Belo Horizonte — MG ·
+                30.112-000</span></div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-regular fa-clock"></i></div>
+            <div><strong>Horário de atendimento</strong><span>Segunda a Sexta: 8h às 20h<br>Sábado: 8h às 13h</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
+            <div><strong>E-mail</strong><span>ana@dranabeatriz.com.br</span></div>
+          </div>
+          <a class="whatsapp-btn"
+            href="https://wa.me/5531975469010?text=Olá%20Dra.%20Ana%20Beatriz%2C%20gostaria%20de%20mais%20informações%20sobre%20o%20atendimento!"
+            target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp
+          </a>
+        </div>
+        <div>
+          <form class="contact-form" onsubmit="submitForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Nome completo</label>
+                <input type="text" placeholder="Seu nome" required>
+              </div>
+              <div class="form-group">
+                <label>Telefone / WhatsApp</label>
+                <input type="tel" placeholder="(31) 9 0000-0000">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>E-mail</label>
+              <input type="email" placeholder="seu@email.com" required>
+            </div>
+            <div class="form-group">
+              <label>Modalidade</label>
+              <select>
+                <option>Presencial — Savassi, BH</option>
+                <option>Online (videoconferência)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Mensagem</label>
+              <textarea placeholder="Conte um pouco sobre o que você está buscando..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Enviar mensagem</button>
+            <p id="form-success" style="display:none;color:var(--sage-d);font-size:14px;margin-top:8px">✓ Mensagem
+              enviada! Retornarei em até 24h.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo"><span>Ana Beatriz</span> Ferreira</div>
+          <p class="footer-copy" style="margin-top:8px">Psicóloga Clínica · CRP 06/123456</p>
+        </div>
+        <nav class="footer-nav">
+          <a href="#sobre">Sobre</a>
+          <a href="#especialidades">Especialidades</a>
+          <a href="#agendamento">Agendamento</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <div class="social-links">
+          <a class="social-link" href="https://www.instagram.com/gabriel.luiz.s/" target="_blank"
+            aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a class="social-link" href="https://facebook.com" target="_blank" aria-label="Facebook"><i
+              class="fa-brands fa-facebook-f"></i></a>
+          <a class="social-link" href="https://www.linkedin.com/in/gabriel-luiz-silva-es" target="_blank"
+            aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a class="social-link" href="https://wa.me/5531975469010" target="_blank" aria-label="WhatsApp"><i
+              class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,.06);margin-top:32px;padding-top:24px;text-align:center">
+        <p class="footer-copy">© 2025 Dra. Ana Beatriz Ferreira — Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a class="float-wa" href="https://wa.me/5531975469010?text=Olá%20Dra.%20Ana%20Beatriz!" target="_blank"
+    aria-label="WhatsApp">
+    <div class="float-wa-pulse"></div>
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // MOBILE MENU
+    function toggleMenu() {
+      var m = document.getElementById('mobileMenu');
+      m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
+    }
+    function closeMenu() {
+      document.getElementById('mobileMenu').style.display = 'none';
+    }
+
+    // CALENDAR
+    var months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+    var today = new Date();
+    var curYear = today.getFullYear();
+    var curMonth = today.getMonth();
+    var selectedDate = null;
+    var selectedSlot = null;
+    var booked = { '2025-0': ['09:00', '14:00'], '2025-1': ['10:00'] };
+
+    function changeMonth(d) { curMonth += d; if (curMonth > 11) { curMonth = 0; curYear++; } if (curMonth < 0) { curMonth = 11; curYear--; } renderCal(); }
+
+    function renderCal() {
+      document.getElementById('cal-title').textContent = months[curMonth] + ' ' + curYear;
+      var grid = document.getElementById('cal-days');
+      grid.innerHTML = '';
+      var first = new Date(curYear, curMonth, 1).getDay();
+      var days = new Date(curYear, curMonth + 1, 0).getDate();
+      for (var i = 0; i < first; i++) { var e = document.createElement('div'); e.className = 'cal-day'; grid.appendChild(e); }
+      for (var d = 1; d <= days; d++) {
+        var e = document.createElement('div');
+        var date = new Date(curYear, curMonth, d);
+        var isPast = date < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        var isToday = d === today.getDate() && curMonth === today.getMonth() && curYear === today.getFullYear();
+        var isSun = date.getDay() === 0;
+        e.textContent = d;
+        if (isPast || isSun) { e.className = 'cal-day past'; }
+        else {
+          e.className = 'cal-day available' + (isToday ? ' today' : '');
+          var dd = d;
+          e.onclick = (function (day) { return function () { selectDay(day); }; })(dd);
+        }
+        grid.appendChild(e);
+      }
+    }
+
+    function selectDay(d) {
+      selectedDate = d; selectedSlot = null;
+      document.querySelectorAll('.cal-day').forEach(function (el) {
+        if (el.textContent == d && el.classList.contains('available')) { el.classList.add('selected'); }
+        else { el.classList.remove('selected'); }
+      });
+      var key = curYear + '-' + d;
+      var bookedSlots = booked[key] || [];
+      var allSlots = ['08:00', '09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00'];
+      var grid = document.getElementById('slots-grid');
+      grid.innerHTML = '';
+      allSlots.forEach(function (s) {
+        var el = document.createElement('div');
+        el.className = 'slot' + (bookedSlots.indexOf(s) > -1 ? ' booked' : '');
+        el.textContent = s;
+        if (bookedSlots.indexOf(s) === -1) {
+          el.onclick = (function (slot) { return function () { selectSlot(slot); }; })(s);
+        }
+        grid.appendChild(el);
+      });
+      var monthNames = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+      document.getElementById('slots-title').textContent = 'Horários para ' + d + ' de ' + monthNames[curMonth];
+      document.getElementById('time-slots').style.display = 'block';
+      document.getElementById('confirm-btn').classList.remove('visible');
+      document.getElementById('booking-success').style.display = 'none';
+    }
+
+    function selectSlot(s) {
+      selectedSlot = s;
+      document.querySelectorAll('.slot').forEach(function (el) {
+        if (el.textContent === s && !el.classList.contains('booked')) { el.classList.add('selected'); }
+        else { el.classList.remove('selected'); }
+      });
+      document.getElementById('confirm-btn').classList.add('visible');
+    }
+
+    function confirmBooking() {
+      if (!selectedDate || !selectedSlot) return;
+      var monthNames = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+      document.getElementById('booking-msg').textContent = '✓ Consulta agendada para ' + selectedDate + ' de ' + monthNames[curMonth] + ' às ' + selectedSlot + '. Você receberá confirmação por WhatsApp!';
+      document.getElementById('booking-success').style.display = 'block';
+      document.getElementById('confirm-btn').classList.remove('visible');
+      var key = curYear + '-' + selectedDate;
+      if (!booked[key]) booked[key] = [];
+      booked[key].push(selectedSlot);
+      document.querySelectorAll('.slot').forEach(function (el) {
+        if (el.textContent === selectedSlot) { el.className = 'slot booked'; }
+      });
+    }
+
+    // FORM
+    function submitForm(e) {
+      e.preventDefault();
+      document.getElementById('form-success').style.display = 'block';
+      e.target.reset();
+    }
+
+    // INIT
+    renderCal();
+  </script>
+</body>
+
+</html>
